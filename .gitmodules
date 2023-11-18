@@ -1,0 +1,3 @@
+[submodule "ai_vision_tool"]
+	path = ai_vision_tool
+	url = ssh://git@bitbucket.vih.infineon.com:7999/~goni/ai_vision_tool.git
