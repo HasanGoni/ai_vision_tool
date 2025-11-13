@@ -181,6 +181,25 @@ python ai_vision_tool/examples/custom_pin_detection.py \
 
 See `ai_vision_tool/examples/simple_example.py` for more examples.
 
+### Jupyter Notebooks
+
+Interactive notebooks for data generation and experimentation:
+
+**Synthetic Image Generation** (`notebooks/synthetic_image_generation.ipynb`):
+- Compose pin objects with different backgrounds
+- Apply transformations (scale, rotation, brightness, etc.)
+- Generate diverse training/testing data
+- Save images with ground truth metadata
+- Test detection pipeline on synthetic data
+
+```bash
+# Install Jupyter and start notebook
+pip install jupyter notebook
+jupyter notebook notebooks/synthetic_image_generation.ipynb
+```
+
+See `notebooks/README.md` for detailed documentation.
+
 ## Configuration
 
 ### Pipeline Parameters
@@ -286,9 +305,14 @@ ai_vision_tool/
 ├── examples/
 │   ├── custom_pin_detection.py  # Full CLI example
 │   └── simple_example.py        # Quick start examples
+├── notebooks/
+│   └── synthetic_image_generation.ipynb  # Generate synthetic training data
 ├── configs/
 │   └── model_config.yaml      # Model configurations
-└── data/                       # Sample data (add your own)
+└── data/
+    ├── pins/                   # Pin images and masks
+    ├── backgrounds/            # Background images
+    └── synthetic_images/       # Generated synthetic images
 ```
 
 ## Advanced Usage
