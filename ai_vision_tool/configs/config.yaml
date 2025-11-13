@@ -1,0 +1,57 @@
+# AI Vision Tool Configuration
+
+# Model Settings
+models:
+  dinov3:
+    model_name: "dinov2_vitb14"  # Options: dinov2_vits14, dinov2_vitb14, dinov2_vitl14, dinov2_vitg14
+    use_registers: true
+
+  sam2:
+    model_type: "vit_b"  # Options: vit_tiny, vit_b, vit_l, vit_h
+    checkpoint_path: null  # null = auto-download
+
+  grounding_dino:
+    config_path: "GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py"
+    checkpoint_path: null  # null = auto-download
+    box_threshold: 0.35
+    text_threshold: 0.25
+
+# Pipeline Settings
+pipeline:
+  use_visual_matching: true
+  use_text_grounding: true
+  default_fusion_strategy: "multiply"  # Options: multiply, max, weighted
+
+# Detection Parameters
+detection:
+  similarity_threshold: 0.5  # Visual similarity threshold (0-1)
+  detection_threshold: 0.3   # Text detection threshold (0-1)
+  min_region_area: 100       # Minimum mask area in pixels
+
+# Preprocessing
+preprocessing:
+  target_size: null  # null = keep original, or [width, height]
+  normalize: true
+
+# Postprocessing
+postprocessing:
+  remove_small_regions: true
+  min_mask_area: 100
+  apply_morphology: false
+
+# Visualization
+visualization:
+  show_boxes: true
+  show_masks: true
+  show_labels: true
+  mask_alpha: 0.5
+  box_thickness: 2
+
+# Output
+output:
+  save_individual_masks: true
+  save_visualization: true
+  output_format: "jpg"  # jpg, png
+
+# Device
+device: "cuda"  # cuda or cpu
